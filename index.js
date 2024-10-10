@@ -4,7 +4,7 @@ const { chromium } = require('playwright');
 const webhookUrl = process.env.WEBHOOK_URL || "https://api.day.app/default-key/";
 
 const producUrl = "https://www.metrobyt-mobile.com/cell-phone/apple-iphone-12";
-const producUrl2 = "https://www.metrobyt-mobile.com/cell-phone/apple-iphone-13";
+const producUrl2 = "https://www.metrobyt-mobile.com/cell-phone/apple-iphone-se-3rd-gen";
 
 const makeGetRequest = async (url) => {
   try {
