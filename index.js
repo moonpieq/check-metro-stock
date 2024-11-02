@@ -39,7 +39,7 @@ const checkStock = async () => {
     await page.waitForTimeout(1000);
 
     // Check the inputs with values "01", "03", "05"
-    const valuesToCheck = ['01', '03', '05', '14'];
+    const valuesToCheck = ['01', '03', '05'];
     
     for (const value of valuesToCheck) {
       const input = await page.$(`input[value="${value}"]`);
@@ -52,6 +52,8 @@ const checkStock = async () => {
           const message = "Ticket is available on https://sell.pia.jp/inbound/selectTicket.php?eventCd=2435790&rlsCd=008&langCd=eng&x=191&y=32"
           await makeGetRequest(webhookUrl + encodeURIComponent(message));
           console.log('Sent message to Bark:', message);
+        } else {
+          console.log("Ticket not available this time")
         }
       }
     }
