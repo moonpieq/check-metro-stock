@@ -23,8 +23,9 @@ const checkStock = async () => {
   let browser;
   try {
     console.log(webhookUrl);
-    browser = await chromium.launch({headless: false});
+    browser = await chromium.launch();
     const urls = [producUrl];
+    console.log("start checking ticket");
     const results = await Promise.all(urls.map(async (url) => {
       const page = await browser.newPage();
       await page.goto(url, { waitUntil: 'networkidle' });
